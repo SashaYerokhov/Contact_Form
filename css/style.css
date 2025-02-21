@@ -49,8 +49,6 @@ body {
   margin-block-end: 40px;
 }
 
-/* для того чтобы разместить блоки
-друг возле друга в одну строку */
 .contact__name-first,
 .contact__name-last {
   display: inline-block;
@@ -186,8 +184,6 @@ input[type="radio"]:checked::after {
   top: 20px;
 }
 
-/* для того чтобы, после ввода данных
-в инпуте цвет плейсхолдера - был белый */
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus {
@@ -242,7 +238,6 @@ textarea {
   padding-inline-start: 10px; 
 }
 
-/* скрыли чекбокс по умолчанию */
 .cartCheck {
   position: absolute;
   z-index: -1;
@@ -256,7 +251,6 @@ textarea {
   user-select: none;
 }
 
-/* установка свего чекбокса */
 .cartCheck + label::before {
   content: "";
   width: 1.0625rem;
@@ -271,7 +265,6 @@ textarea {
   background-size: 50% 50%;
 }
 
-/* устновки птички в чекбокс */
 .cartCheck:checked + label::before {
   background-color: var(--grey-900-darker);
   background-image: url("../assets/images/chek_2.svg");
