@@ -1,0 +1,405 @@
+/* * {
+  outline: 2px solid green !important;
+} */
+:root {
+  --green-200-lighter: hsl(148, 38%, 91%);
+  --green-600-medium: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+  --white: hsl(0, 0%, 100%);
+  --grey-500-medium: hsl(186, 15%, 59%);
+  --grey-900-darker: hsl(187, 24%, 22%);
+}
+
+@font-face {
+  font-family: "karla-regular";
+  src: local("karla-regular"), url("../assets/fonts/static/Karla-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "karla-bold";
+  src: local("karla-bold"), url("../assets/fonts/static/Karla-Regular.ttf");
+  font-weight: 700;
+}
+
+body {
+  max-width: 90rem;
+  height: 64.3125rem;
+  margin: 0 auto;
+  font-family: "karla-regular", serif;
+  font-size: 1rem;
+  background-color: var(--green-200-lighter);
+}
+
+.contact__cart {
+  max-width: 45.9375rem;
+  min-height: 45.3125rem;
+  margin: 127px auto;
+  background-color: var(--white);  
+  border-radius: 20px;
+}
+
+.contact__container {
+  padding: 50px 40px;
+}
+
+.contact__container h2 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-block-end: 40px;
+}
+
+/* для того чтобы разместить блоки
+друг возле друга в одну строку */
+.contact__name-first,
+.contact__name-last {
+  display: inline-block;
+}
+
+.contact__name-last {
+  padding-inline-start: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+label span,
+h4 span {
+  color: var(--green-600-medium);
+  padding-inline-start: 10px;
+}
+
+input[type="text"] {
+  display: block;
+  border: 2px solid var(--grey-500-medium);
+  width: 20rem;
+  height: 3.125rem;
+  border-radius: 5px;
+  cursor: pointer;
+  padding-inline-start: 13px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.contanct__email {
+  margin: 30px 0;
+}
+
+input[type="email"] {
+  display: block;
+  border: 2px solid var(--grey-500-medium);
+  width: 100%;
+  height: 3.125rem;
+  border-radius: 5px;
+  cursor: pointer;
+  padding-inline-start: 13px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.success input {
+  border: 2px solid var(--grey-500-medium);
+}
+
+.success p {
+  visibility: hidden;
+}
+
+.contact__query {
+  margin-block-end: 30px;
+}
+
+.error input {
+  border: 2px solid var(--red);
+}
+
+.error p {
+  font-size: 14px;
+  margin: 10px 0;
+  color: var(--red);
+  visibility: visible;  
+}
+
+h4 {
+  font-weight: 400;
+  margin-block-end: 20px;
+}
+
+.contact__query-all {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  column-gap: 16px;
+}
+
+.contact__query-general,
+.contact__query-support {
+  border: 2px solid var(--grey-500-medium);
+  width: 20rem;
+  height: 3.125rem;
+  border-radius: 5px;
+  padding-inline-start: 13px;
+  cursor: pointer;
+}
+
+.contact__query-general:hover,
+.contact__query-support:hover {
+  border-color: var(--green-600-medium);
+}
+
+.contact__query-general label,
+.contact__query-support label {
+  font-size: 1rem;
+  position: relative;
+  padding: 12px 0 0 35px;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+input[type="radio"]::before {
+  content: "";
+  display: inline-block;
+  margin-block-start: 15px;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: transparent;
+  border: 2px solid var(--green-600-medium);
+  border-radius: 50%;
+}
+input[type="radio"]:checked::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 0.625rem;
+  height: 0.625rem;
+  background: var(--green-600-medium);
+  border: 2px solid var(--green-600-medium);
+  border-radius: 50%;
+  left: 5px;
+  top: 20px;
+}
+
+/* для того чтобы, после ввода данных
+в инпуте цвет плейсхолдера - был белый */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 40rem var(--white) inset;
+}
+
+.contact__query-general:has(input:checked),
+.contact__query-support:has(input:checked) {
+  background-color: var(--green-200-lighter);
+}
+
+.contact__query p,
+.cart__concent p {
+  opacity: 0;
+  font-size: 14px;
+  margin-block-start: 10px;
+  color: var(--red);
+}
+
+.contact__query.error p {
+  opacity: 1;
+}
+
+.contact__message {
+  margin-block-end: 50px;
+}
+
+textarea {
+  width: 100%;
+  height: 6.25rem;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid var(--grey-500-medium);
+  background-color: var(--white);
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: none;
+  cursor: pointer;
+}
+
+.cart__concent {
+  position: relative;
+  margin-block-end: 30px;
+}
+
+.cart__concent label {
+  margin: 0;
+}
+
+.cart__concent span {
+  color: var(--green-600-medium);
+  padding-inline-start: 10px; 
+}
+
+/* скрыли чекбокс по умолчанию */
+.cartCheck {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.cartCheck + label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+/* установка свего чекбокса */
+.cartCheck + label::before {
+  content: "";
+  width: 1.0625rem;
+  height: 1.0625rem;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid var(--grey-900-darker);
+  border-radius: 3px;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+/* устновки птички в чекбокс */
+.cartCheck:checked + label::before {
+  background-color: var(--grey-900-darker);
+  background-image: url("../assets/images/chek_2.svg");
+}
+
+.cart__concent.error p {
+  opacity: 1;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+  border-color: var(--green-600-medium);
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: var(--green-600-medium);
+  outline: 1px solid var(--green-600-medium);
+}
+
+input[type="text"]:focus:placeholder-shown {
+  background-color: var(--white);
+}
+
+input[type="text"]:focus-visible,
+input[type="email"]:focus-visible,
+textarea:focus-visible {
+  outline: 2px dotted var(--green-600-medium);
+}
+
+.btn {
+  color: var(--white);
+  background-color: var(--green-600-medium);
+  border: none;
+  outline: none;
+  font-weight: 700;
+  width: 100%;
+  height: 3.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.4s ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--grey-900-darker);
+}
+
+.contact__cart .cart__modal {  
+  visibility: hidden;
+  background-color: var(--grey-900-darker);
+  color: var(--white);
+  width: 28.125rem;
+  height: 6.625rem;
+  padding: 25px 0 0 25px;
+  border-radius: 5px;
+  position: absolute;
+  top: 25px;
+  left: 35%;
+}
+.cart__modal-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.cart__modal.success {
+  visibility: visible;
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+  font-style: italic;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media(max-width: 760px) {
+  .contact__cart {
+    margin: 32px auto;
+  }
+
+  .contact__container {
+    padding: 32px 35px;
+  }
+
+  .contact__name-first,
+.contact__name-last {
+  display: block;
+}
+
+.contact__name-first {
+  margin-block-end: 30px;
+}
+
+.contact__name-last {
+  padding-inline-start: 0;
+}
+
+input[type="text"] {
+  width: 100%;
+}
+
+.contact__query-all {
+  flex-direction: column;
+  row-gap: 16px;
+}
+.contact__query-general,
+.contact__query-support {
+  width: 100%;
+}
+
+textarea {
+  height: 15rem;
+}
+
+.contact__cart .cart__modal {
+  width: 21.875rem;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+}
