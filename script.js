@@ -10,13 +10,11 @@ const cartCheck = document.querySelector("[type='checkbox']");
 const submit = document.querySelector(".btn");
 const cartModal = document.querySelector(".cart__modal");
 
-// регулярное выражение для имени
 function nameValid(name) {
   const reg = /^[a-zA-Z]{3,}$/;
   return reg.test(name);
 }
 
-// регулярное выражение для электоной почты
 function emailValid(email) {
   const reg =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -27,7 +25,6 @@ form.addEventListener("submit", (event) => {
   //   event.preventDefault();
   validateForm();
 
-  // когда форма заполнена верна - добавляется класс для модального окна
   if (formValid() === true) {
     event.preventDefault();
     cartModal.classList.add("success");    
@@ -35,7 +32,6 @@ form.addEventListener("submit", (event) => {
 
 });
 
-// проверка правильной валидации формы
 function formValid() {
   const contactsInput = form.querySelectorAll(".contact__input");
 
@@ -49,28 +45,24 @@ function formValid() {
 }
 
 function validateForm() {
-  // first name
   if (firstNameInput.value.trim() == "") {
     error(firstNameInput, "This field is required");
   } else if (nameValid(firstNameInput.value)) {
     success(firstNameInput);
   }
 
-  //   last name
   if (lastNameInput.value.trim() == "") {
     error(lastNameInput, "This field is required");
   } else if (nameValid(lastNameInput.value)) {
     success(lastNameInput);
   }
 
-  //   email
   if (emailInput.value.trim() === "") {
     error(emailInput, "Please enter a valid email address");
   } else if (emailValid(emailInput.value)) {
     success(emailInput);
   }
 
-  //   radio-buttons
   validateRadio();
 
   //   message - textarea
@@ -80,7 +72,6 @@ function validateForm() {
     success(textInput);
   }
 
-  //   checkbox
   validateCheck();
 }
 
