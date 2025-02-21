@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Contact form</title>
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section class="contact__cart">
+      <form action="#" class="form" id="form">
+        <div class="contact__container">
+          <h2>Contact Us</h2>
+          <div class="contact__name-first contact__input">
+            <label for="nameFirst">First Name<span>&#42;</span></label>
+            <input
+              type="text"
+              id="nameFirst"
+              name="nameFirst"
+              class="nameFirst"
+            />
+            <p></p>
+          </div>
+          <div class="contact__name-last contact__input">
+            <label for="nameLast">Last Name<span>&#42;</span></label>
+            <input type="text" id="nameLast" name="nameLast" class="nameLast" />
+            <p></p>
+          </div>
+          <div class="contanct__email contact__input">
+            <label for="email-cart">Email Address<span>&#42;</span></label>
+            <input type="email" name="email-cart" id="email-cart" />
+            <p></p>
+          </div>
+          <div class="contact__query contact__input">
+            <h4>Query Type<span>&#42;</span></h4>
+            <div class="contact__query-all">
+              <div class="contact__query-general">
+                <label for="radioGeneral">
+                  <input type="radio" name="radio" id="radioGeneral" />
+                  General Enquiry
+                </label>
+              </div>
+              <div class="contact__query-support">
+                <label for="radioSupport">
+                  <input type="radio" name="radio" id="radioSupport" />
+                  Support Request
+                </label>
+              </div>
+            </div>
+
+            <p class="error">Please select a query type</p>
+          </div>
+          <div class="contact__message contact__input">
+            <label for="contactMsg">Message<span>&#42;</span></label>
+            <textarea name="contactMsg" id="contactMsg"></textarea>
+            <p></p>
+          </div>
+          <div class="cart__concent contact__input">
+            <input
+              type="checkbox"
+              name="cartCheck"
+              id="cartCheck"
+              class="cartCheck"
+            />
+            <label for="cartCheck" class="checkbox__label"
+              >I consent to being contacted by the team<span>&#42;</span></label
+            >
+            <p class="error">
+              To submit this form, please consent to being contacted
+            </p>
+          </div>
+          <button type="submit" class="btn">Submit</button>
+        </div>
+      </form>
+      <acricle class="cart__modal">
+        <div class="cart__modal-title">
+          <img src="./assets/images/icon-success-check.svg" alt="" />
+          <h5>Message Sent!</h5>
+        </div>
+        <span>Thanks for completing the form. We'll be in touch soon!</span>
+      </acricle>
+    </section>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Sasha Yerokhov</a>.
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
+
