@@ -29,7 +29,7 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
     cartModal.classList.add("success");    
   }
-
+form.reset();
 });
 
 function formValid() {
